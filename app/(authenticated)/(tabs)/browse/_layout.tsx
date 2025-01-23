@@ -10,7 +10,7 @@ const Layout = () => {
       screenOptions={{
         headerShadowVisible: false,
         contentStyle: {
-          backgroundColor: Colors.background,
+          backgroundColor: Colors.backgroundAlt,
         },
       }}
     >
