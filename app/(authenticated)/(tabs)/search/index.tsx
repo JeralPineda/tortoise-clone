@@ -1,10 +1,13 @@
 import Fab from "@/components/Fab";
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 const Page = () => {
   return (
     <>
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        contentContainerStyle={styles.container}
+      >
         <View>
           <Text>Search</Text>
         </View>
@@ -16,3 +19,9 @@ const Page = () => {
 };
 
 export default Page;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
