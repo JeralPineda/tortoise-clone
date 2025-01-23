@@ -1,18 +1,21 @@
+import { useEffect } from "react";
+import { ActivityIndicator, View, LogBox } from "react-native";
 import { ClerkLoaded, ClerkProvider, useAuth } from "@clerk/clerk-expo";
 import { Stack, usePathname, useRouter, useSegments } from "expo-router";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { Toaster } from "sonner-native";
 
 import { tokenCache } from "@/utils/cache";
 import { Colors } from "@/constants/Colors";
-import { ActivityIndicator, View } from "react-native";
-import { useEffect } from "react";
 
-const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
-
-if (!publishableKey) {
+const CLERK_PUBLISHABLE_KEY = process.env
+  .EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY as string;
+if (!CLERK_PUBLISHABLE_KEY) {
   throw new Error(
     "Missing Publishable Key. Please set EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY in your .env",
   );
 }
+LogBox.ignoreLogs(["Clerk: Clerk has been loaded with development keys"]);
 
 const InitialLayout = () => {
   const { isLoaded, isSignedIn } = useAuth();
@@ -63,9 +66,15 @@ const InitialLayout = () => {
 
 const RootLayout = () => {
   return (
-    <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
+    <ClerkProvider
+      publishableKey={CLERK_PUBLISHABLE_KEY!}
+      tokenCache={tokenCache}
+    >
       <ClerkLoaded>
-        <InitialLayout />
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <Toaster />
+          <InitialLayout />
+        </GestureHandlerRootView>
       </ClerkLoaded>
     </ClerkProvider>
   );
