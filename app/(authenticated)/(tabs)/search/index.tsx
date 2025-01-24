@@ -8,9 +8,7 @@ const Page = () => {
         contentInsetAdjustmentBehavior="automatic"
         contentContainerStyle={styles.container}
       >
-        <View>
-          <Text>Search</Text>
-        </View>
+        <Text>Search</Text>
       </ScrollView>
 
       <Fab />

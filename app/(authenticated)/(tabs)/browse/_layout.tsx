@@ -1,3 +1,4 @@
+import MoreButton from "@/components/MoreButton";
 import { Colors } from "@/constants/Colors";
 import { useUser } from "@clerk/clerk-expo";
 import { Ionicons } from "@expo/vector-icons";
@@ -28,7 +29,7 @@ const Layout = () => {
         options={{
           title: "Settings",
           headerLargeTitle: true,
-          headerRight: () => <MoreButton />,
+          headerRight: () => <MoreButton pageName="Settings" />,
         }}
       />
     </Stack>
