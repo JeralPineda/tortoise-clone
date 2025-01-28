@@ -10,6 +10,9 @@ import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { Todo } from "@/types/interfaces";
 import TaskRow from "@/components/TaskRow";
+import { Colors } from "@/constants/Colors";
+import { RefreshControl } from "react-native-gesture-handler";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 interface Section {
   title: string;
@@ -18,6 +21,7 @@ interface Section {
 
 const Page = () => {
   const [sectionListData, setSectionListData] = useState<Section[]>([]);
+  const { top } = useSafeAreaInsets();
 
   const db = useSQLiteContext();
   const drizzleDb = drizzle(db);
@@ -74,12 +78,18 @@ const Page = () => {
   }, [data]);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { paddingTop: top + 20 }]}>
       <SectionList
+        showsVerticalScrollIndicator={false}
         contentInsetAdjustmentBehavior="automatic"
         sections={sectionListData}
         renderItem={({ item }) => <TaskRow task={item} />}
-        renderSectionHeader={({ section }) => <Text>{section.title}</Text>}
+        renderSectionHeader={({ section }) => (
+          <Text style={styles.header}>{section.title}</Text>
+        )}
+        refreshControl={
+          <RefreshControl refreshing={false} onRefresh={() => {}} />
+        }
       />
 
       <Fab />
@@ -93,5 +103,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginBottom: 82,
+  },
+  header: {
+    fontSize: 16,
+    backgroundColor: "#fff",
+    fontWeight: "bold",
+    padding: 14,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: Colors.lightBorder,
   },
 });
