@@ -1,8 +1,5 @@
 import { Colors } from "@/constants/Colors";
-import { todos } from "@/db/schema";
 import { Todo } from "@/types/interfaces";
-import { eq } from "drizzle-orm";
-import { drizzle } from "drizzle-orm/expo-sqlite";
 import { Link } from "expo-router";
 import { useSQLiteContext } from "expo-sqlite";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
@@ -14,7 +11,6 @@ interface TaskRowProps {
 
 export default function TaskRow({ task }: TaskRowProps) {
   const db = useSQLiteContext();
-  const drizzleDb = drizzle(db);
 
   const markAsCompleted = async () => {
     console.log("markAsCompleted");

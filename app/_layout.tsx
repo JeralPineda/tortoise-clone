@@ -1,17 +1,16 @@
-import { Suspense, useEffect } from "react";
-import { ActivityIndicator, View, LogBox } from "react-native";
-import { ClerkLoaded, ClerkProvider, useAuth } from "@clerk/clerk-expo";
-import { Stack, usePathname, useRouter, useSegments } from "expo-router";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { Toaster } from "sonner-native";
-
-import { tokenCache } from "@/utils/cache";
 import { Colors } from "@/constants/Colors";
-import { openDatabaseSync, SQLiteProvider } from "expo-sqlite";
-import { drizzle } from "drizzle-orm/expo-sqlite";
-import { useMigrations } from "drizzle-orm/expo-sqlite/migrator";
 import migrations from "@/drizzle/migrations";
 import { addDummyData } from "@/utils/addDummyData";
+import { tokenCache } from "@/utils/cache";
+import { ClerkLoaded, ClerkProvider, useAuth } from "@clerk/clerk-expo";
+import { drizzle } from "drizzle-orm/expo-sqlite";
+import { useMigrations } from "drizzle-orm/expo-sqlite/migrator";
+import { Stack, usePathname, useRouter, useSegments } from "expo-router";
+import { openDatabaseSync, SQLiteProvider } from "expo-sqlite";
+import { Suspense, useEffect } from "react";
+import { ActivityIndicator, LogBox, View } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { Toaster } from "sonner-native";
 
 const CLERK_PUBLISHABLE_KEY = process.env
   .EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY as string;
