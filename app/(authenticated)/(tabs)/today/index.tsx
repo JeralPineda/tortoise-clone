@@ -1,4 +1,4 @@
-import { SectionList, StyleSheet, Text, View } from "react-native";
+import { Button, SectionList, StyleSheet, Text, View } from "react-native";
 
 import Fab from "@/components/Fab";
 import { projects, todos } from "@/db/schema";
@@ -13,6 +13,7 @@ import TaskRow from "@/components/TaskRow";
 import { Colors } from "@/constants/Colors";
 import { RefreshControl } from "react-native-gesture-handler";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import * as Sentry from "@sentry/react-native";
 
 interface Section {
   title: string;
@@ -77,6 +78,10 @@ const Page = () => {
     setSectionListData(listData);
   }, [data]);
 
+  const jeralFunc = () => {
+    throw new Error("jeral error");
+  };
+
   return (
     <View style={[styles.container, { paddingTop: top + 20 }]}>
       <SectionList
@@ -91,6 +96,13 @@ const Page = () => {
           <RefreshControl refreshing={false} onRefresh={() => {}} />
         }
       />
+      <Button
+        title="Try!"
+        onPress={() => {
+          Sentry.captureException(new Error("First error"));
+        }}
+      />
+      <Button title="Jerak Func" onPress={jeralFunc} />
 
       <Fab />
     </View>

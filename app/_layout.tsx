@@ -5,12 +5,45 @@ import { tokenCache } from "@/utils/cache";
 import { ClerkLoaded, ClerkProvider, useAuth } from "@clerk/clerk-expo";
 import { drizzle } from "drizzle-orm/expo-sqlite";
 import { useMigrations } from "drizzle-orm/expo-sqlite/migrator";
-import { Stack, usePathname, useRouter, useSegments } from "expo-router";
+import {
+  Stack,
+  useNavigationContainerRef,
+  usePathname,
+  useRouter,
+  useSegments,
+} from "expo-router";
 import { openDatabaseSync, SQLiteProvider } from "expo-sqlite";
 import { Suspense, useEffect } from "react";
 import { ActivityIndicator, LogBox, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Toaster } from "sonner-native";
+import * as Sentry from "@sentry/react-native";
+
+const navigationIntegration = Sentry.reactNavigationIntegration({
+  enableTimeToInitialDisplay: true, // Only in native builds, not in Expo Go
+});
+
+Sentry.init({
+  dsn: "https://82cdbce07f69e31b9e2d8d73ef9bfeb0@o4508316179431424.ingest.us.sentry.io/4508736200507392",
+  attachScreenshot: true,
+  debug: false,
+  tracesSampleRate: 1.0,
+  profilesSampleRate: 1.0,
+  replaysSessionSampleRate: 0.1,
+  replaysOnErrorSampleRate: 1.0,
+  integrations: [
+    Sentry.mobileReplayIntegration({
+      maskAllImages: false,
+      maskAllText: false,
+      maskAllVectors: false,
+    }),
+    navigationIntegration,
+    Sentry.spotlightIntegration(),
+  ],
+
+  // uncomment the line below to enable Spotlight (https://spotlightjs.com)
+  // spotlight: __DEV__,
+});
 
 const CLERK_PUBLISHABLE_KEY = process.env
   .EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY as string;
@@ -69,6 +102,7 @@ const InitialLayout = () => {
 };
 
 const RootLayout = () => {
+  const ref = useNavigationContainerRef();
   const expoDB = openDatabaseSync("todos");
   const db = drizzle(expoDB);
   const { success, error } = useMigrations(db, migrations);
@@ -77,6 +111,10 @@ const RootLayout = () => {
     if (!success) return;
     addDummyData(db);
   }, [success]);
+
+  useEffect(() => {
+    navigationIntegration.registerNavigationContainer(ref);
+  }, [ref]);
 
   return (
     <ClerkProvider
@@ -107,4 +145,4 @@ function Loading() {
   return <ActivityIndicator size="large" color={Colors.primary} />;
 }
 
-export default RootLayout;
+export default Sentry.wrap(RootLayout);
