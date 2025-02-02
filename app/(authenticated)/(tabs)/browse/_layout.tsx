@@ -1,8 +1,7 @@
-import MoreButton from "@/components/MoreButton";
 import { Colors } from "@/constants/Colors";
 import { useUser } from "@clerk/clerk-expo";
 import { Ionicons } from "@expo/vector-icons";
-import { Link, Stack } from "expo-router";
+import { Stack } from "expo-router";
 import { Image, StyleSheet } from "react-native";
 
 const Layout = () => {
@@ -20,16 +19,14 @@ const Layout = () => {
         options={{
           title: "Browse",
           headerLeft: () => <HeaderLeft />,
-
           headerRight: () => <HeaderRight />,
         }}
       />
       <Stack.Screen
-        name="settings"
+        name="new-project"
         options={{
-          title: "Settings",
-          headerLargeTitle: true,
-          headerRight: () => <MoreButton pageName="Settings" />,
+          presentation: "modal",
+          headerShown: false,
         }}
       />
     </Stack>
