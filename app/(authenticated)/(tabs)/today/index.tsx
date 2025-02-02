@@ -96,13 +96,13 @@ const Page = () => {
           <RefreshControl refreshing={false} onRefresh={() => {}} />
         }
       />
-      <Button
-        title="Try!"
-        onPress={() => {
-          Sentry.captureException(new Error("First error"));
-        }}
-      />
-      <Button title="Jerak Func" onPress={jeralFunc} />
+      {/* <Button */}
+      {/*   title="Try!" */}
+      {/*   onPress={() => { */}
+      {/*     Sentry.captureException(new Error("First error")); */}
+      {/*   }} */}
+      {/* /> */}
+      {/* <Button title="Jerak Func" onPress={jeralFunc} /> */}
 
       <Fab />
     </View>

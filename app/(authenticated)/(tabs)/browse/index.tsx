@@ -26,6 +26,10 @@ const Page = () => {
   const onNewProject = async () => {
     if (data.length >= 5 && !isPro) {
       // Go pro
+      console.log(
+        "🚀 browse.tsx -> #30 ~ onNewProject ~ Go Pro",
+        "Not Implemented (Revenuecat) PRO subscriptions",
+      );
     } else {
       router.push("/browse/new-project");
     }
