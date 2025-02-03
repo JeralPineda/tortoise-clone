@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     backgroundColor: "#fff",
     fontWeight: "bold",
-    padding: 14,
+    padding: 20,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: Colors.lightBorder,
   },

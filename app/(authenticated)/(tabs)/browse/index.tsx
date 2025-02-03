@@ -84,8 +84,6 @@ const Page = () => {
             </TouchableOpacity>
           }
         />
-
-        <Button title="Sign Out" onPress={() => signOut()} />
       </View>
 
       <Fab />
