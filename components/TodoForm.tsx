@@ -6,10 +6,12 @@ import { drizzle, useLiveQuery } from "drizzle-orm/expo-sqlite";
 import { projects, todos } from "@/db/schema";
 import { useEffect, useState } from "react";
 import { ScrollView } from "react-native-gesture-handler";
-import { Colors } from "@/constants/Colors";
+import { Colors, DATE_COLORS } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 import { eq } from "drizzle-orm";
 import { useRouter } from "expo-router";
+import { useMMKVString } from "react-native-mmkv";
+import { format, isSameDay, isTomorrow } from "date-fns";
 
 type TodoFormProps = {
   todo?: Todo & {
@@ -38,6 +40,12 @@ export default function TodoFormi({ todo }: TodoFormProps) {
           color: "#000",
         },
   );
+  const [selectedDate, setSelectedDate] = useState<Date>(
+    todo?.due_date ? new Date(todo.due_date) : new Date(),
+  );
+  const [previouslySelectedDate, setPreviouslySelectedDate] =
+    useMMKVString("selectedDate");
+
   const db = useSQLiteContext();
   const drizzleDb = drizzle(db);
   const router = useRouter();
@@ -57,9 +65,16 @@ export default function TodoFormi({ todo }: TodoFormProps) {
 
   const { data } = useLiveQuery(drizzleDb.select().from(projects));
 
-  // useEffect(() => {
-  //   trigger();
-  // }, [trigger]);
+  useEffect(() => {
+    if (previouslySelectedDate) {
+      setSelectedDate(new Date(previouslySelectedDate));
+      setPreviouslySelectedDate(undefined);
+    }
+  }, [previouslySelectedDate]);
+
+  useEffect(() => {
+    trigger();
+  }, [trigger]);
 
   const onSubmit: SubmitHandler<TodoFormData> = async (data) => {
     if (todo) {
@@ -70,7 +85,7 @@ export default function TodoFormi({ todo }: TodoFormProps) {
           name: data.name,
           description: data.description,
           project_id: selectedProject.id,
-          due_date: 0, // TODO: set due date
+          due_date: selectedDate.getTime(),
         })
         .where(eq(todos.id, todo.id));
     } else {
@@ -82,10 +97,23 @@ export default function TodoFormi({ todo }: TodoFormProps) {
         date_added: Date.now(),
         completed: 0,
         project_id: selectedProject.id,
-        due_date: 0, // TODO: set due date
+        due_date: selectedDate.getTime(),
       });
     }
     router.dismiss();
+  };
+
+  const getDateObject = (date: Date) => {
+    if (isSameDay(date, new Date())) {
+      return { name: "Today", color: DATE_COLORS.today };
+    } else if (isTomorrow(new Date(date))) {
+      return { name: "Tomorrow", color: DATE_COLORS.tomorrow };
+    } else {
+      return {
+        name: format(new Date(date), "d MMM"),
+        color: DATE_COLORS.other,
+      };
+    }
   };
 
   return (
@@ -134,17 +162,34 @@ export default function TodoFormi({ todo }: TodoFormProps) {
           keyboardShouldPersistTaps="always"
         >
           <Pressable
+            onPress={() => {
+              const dateString = selectedDate.toISOString();
+              setPreviouslySelectedDate(dateString);
+              router.push("/task/date-select");
+            }}
             style={({ pressed }) => {
               return [
                 styles.outlinedButton,
                 {
                   backgroundColor: pressed ? Colors.lightBorder : "transparent",
                 },
+                { borderColor: getDateObject(selectedDate).color },
               ];
             }}
           >
-            <Ionicons name="calendar-outline" size={24} color={Colors.dark} />
-            <Text style={styles.outlinedButtonText}>Date</Text>
+            <Ionicons
+              name="calendar-outline"
+              size={20}
+              color={getDateObject(selectedDate).color}
+            />
+            <Text
+              style={[
+                styles.outlinedButtonText,
+                { color: getDateObject(selectedDate).color },
+              ]}
+            >
+              {getDateObject(selectedDate).name}
+            </Text>
           </Pressable>
 
           <Pressable

@@ -27,7 +27,7 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>myapp</string>
+          <string>jeraltotoist</string>
           <string>com.jeral495.todoistClone</string>
         </array>
       </dict>

@@ -51,6 +51,7 @@
     "react-native-gesture-handler": "~2.20.2",
     "react-native-ios-context-menu": "^2.5.1",
     "react-native-ios-utilities": "^4.5.1",
+    "react-native-mmkv": "^3.2.0",
     "react-native-purchases": "^8.5.2",
     "react-native-purchases-ui": "^8.5.2",
     "react-native-reanimated": "~3.16.1",
@@ -60,7 +61,8 @@
     "react-native-web": "~0.19.13",
     "react-native-webview": "13.12.5",
     "sonner-native": "^0.16.0",
-    "zeego": "^2.0.4"
+    "zeego": "^2.0.4",
+    "@react-native-community/datetimepicker": "8.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
