@@ -1,17 +1,27 @@
-import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import { Project, Todo } from "@/types/interfaces";
-import { useSQLiteContext } from "expo-sqlite";
-import { drizzle, useLiveQuery } from "drizzle-orm/expo-sqlite";
-import { projects, todos } from "@/db/schema";
-import { useEffect, useState } from "react";
-import { ScrollView } from "react-native-gesture-handler";
 import { Colors, DATE_COLORS } from "@/constants/Colors";
+import { projects, todos } from "@/db/schema";
+import { Project, Todo } from "@/types/interfaces";
 import { Ionicons } from "@expo/vector-icons";
-import { eq } from "drizzle-orm";
-import { useRouter } from "expo-router";
-import { useMMKVString } from "react-native-mmkv";
 import { format, isSameDay, isTomorrow } from "date-fns";
+import { eq } from "drizzle-orm";
+import { drizzle, useLiveQuery } from "drizzle-orm/expo-sqlite";
+import { useRouter } from "expo-router";
+import { useSQLiteContext } from "expo-sqlite";
+import { useEffect, useState } from "react";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import {
+  Dimensions,
+  FlatList,
+  Modal,
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
+import { useMMKVString } from "react-native-mmkv";
 
 type TodoFormProps = {
   todo?: Todo & {
@@ -27,6 +37,7 @@ type TodoFormData = {
 };
 
 export default function TodoFormi({ todo }: TodoFormProps) {
+  const [showProjects, setShowProjects] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project>(
     todo?.project_id
       ? {
@@ -103,6 +114,11 @@ export default function TodoFormi({ todo }: TodoFormProps) {
     router.dismiss();
   };
 
+  const onProjectPress = (project: Project) => {
+    setSelectedProject(project);
+    setShowProjects(false);
+  };
+
   const getDateObject = (date: Date) => {
     if (isSameDay(date, new Date())) {
       return { name: "Today", color: DATE_COLORS.today };
@@ -118,6 +134,40 @@ export default function TodoFormi({ todo }: TodoFormProps) {
 
   return (
     <View style={styles.container}>
+      <Modal
+        visible={showProjects}
+        animationType="fade"
+        transparent
+        onRequestClose={() => setShowProjects(!showProjects)}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <FlatList
+              data={data}
+              style={{ borderRadius: 16 }}
+              showsVerticalScrollIndicator={false}
+              renderItem={({ item }) => (
+                <TouchableOpacity
+                  style={styles.projectButton}
+                  onPress={() => onProjectPress(item)}
+                >
+                  <Text style={{ color: item.color }}>#</Text>
+                  <Text style={styles.projectButtonText}>{item.name}</Text>
+                </TouchableOpacity>
+              )}
+              ItemSeparatorComponent={() => (
+                <View
+                  style={{
+                    height: StyleSheet.hairlineWidth,
+                    backgroundColor: Colors.lightBorder,
+                  }}
+                />
+              )}
+            />
+          </View>
+        </View>
+      </Modal>
+
       <ScrollView
         contentContainerStyle={styles.containerScroll}
         keyboardShouldPersistTaps="always" // evitar que el teclado se cierre al presionar cualquier boton o input
@@ -237,6 +287,7 @@ export default function TodoFormi({ todo }: TodoFormProps) {
 
         <View style={styles.bottomRow}>
           <Pressable
+            onPress={() => setShowProjects(true)}
             style={({ pressed }) => {
               return [
                 styles.outlinedButton,
@@ -246,8 +297,28 @@ export default function TodoFormi({ todo }: TodoFormProps) {
               ];
             }}
           >
-            <Ionicons name="file-tray-outline" size={24} color={Colors.dark} />
-            <Text style={styles.outlinedButtonText}>Labels</Text>
+            {selectedProject.id === 1 && (
+              <Ionicons
+                name="file-tray-outline"
+                size={20}
+                color={Colors.dark}
+              />
+            )}
+
+            {selectedProject.id !== 1 && (
+              <Text
+                style={{
+                  color: selectedProject.color,
+                }}
+              >
+                #{selectedProject.id}
+              </Text>
+            )}
+
+            <Text style={styles.outlinedButtonText}>
+              {selectedProject.name}
+            </Text>
+            <Ionicons name="chevron-down" size={14} color={Colors.dark} />
           </Pressable>
 
           <Pressable
@@ -319,5 +390,30 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
     borderRadius: 25,
     padding: 6,
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  modalView: {
+    margin: 20,
+    width: Dimensions.get("window").width - 60,
+    height: 200,
+    backgroundColor: "#fff",
+    borderRadius: 12,
+    boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.2)",
+    elevation: 5,
+  },
+  projectButton: {
+    padding: 14,
+    backgroundColor: "#fff",
+    borderRadius: 5,
+    alignItems: "center",
+    flexDirection: "row",
+    gap: 14,
+  },
+  projectButtonText: {
+    fontSize: 16,
   },
 });
