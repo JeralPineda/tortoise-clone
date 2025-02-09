@@ -10,30 +10,46 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1A533827F29A4AB196B882B4 /* green-Icon-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A07CC022571540728A6E815E /* green-Icon-60x60@2x.png */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		532188794B384A8B9AAC0E24 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423A70C60B3B4D4B86C52D6F /* noop-file.swift */; };
+		62E1DA416A8E41698561DE6F /* dark-Icon-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69D4B248D0CF43C4B6EDDDEC /* dark-Icon-60x60@3x.png */; };
+		87DC147F557947B6BFF8204E /* dark-Icon-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40EDB5DB242640019E39FDC1 /* dark-Icon-60x60@2x.png */; };
+		8878F44388E04269BFADEA66 /* default-Icon-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E908ABEC5FC6479EBCC5C5B5 /* default-Icon-60x60@2x.png */; };
+		92B9E68267C647BE8EF4ABD3 /* default-Icon-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1FFCEB971A54FDBA6536C13 /* default-Icon-60x60@3x.png */; };
+		9BDB962A6B8743659B911BF1 /* blue-Icon-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5724DB682BE1463E93444E55 /* blue-Icon-60x60@2x.png */; };
+		A23E7DEBD878365BA2CD7C27 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A17856A2F1241F513A08464D /* PrivacyInfo.xcprivacy */; };
+		A86572A4D78CAEAD9829CEDD /* Pods_todoistClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE2BFEE2E009A96D0625CD /* Pods_todoistClone.framework */; };
+		AA2F37566D5449B8803ED577 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EEA9A8A959407E9F9DA766 /* noop-file.swift */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
+		B533DAF3F49F447F9D593667 /* green-Icon-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1D9DA13487848D89C079FAF /* green-Icon-60x60@3x.png */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
-		DD2CD956C3EB333D0B95BCAF /* Pods_todoistClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F1A3A30D53876F291B8F5B /* Pods_todoistClone.framework */; };
-		F28F9EFEA8CD7D144A812F67 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 077353DB22CED6D120D3B74B /* PrivacyInfo.xcprivacy */; };
+		CDAFF56ACF414B3E85BB32B0 /* blue-Icon-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 438FF4CD6C1D49ABB778F214 /* blue-Icon-60x60@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		077353DB22CED6D120D3B74B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = todoistClone/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* todoistClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todoistClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = todoistClone/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = todoistClone/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = todoistClone/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = todoistClone/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = todoistClone/main.m; sourceTree = "<group>"; };
-		2EF8D3514CC84480A294699F /* todoistClone-Bridging-Header.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "todoistClone-Bridging-Header.h"; path = "todoistClone/todoistClone-Bridging-Header.h"; sourceTree = "<group>"; };
-		423A70C60B3B4D4B86C52D6F /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "todoistClone/noop-file.swift"; sourceTree = "<group>"; };
+		40EDB5DB242640019E39FDC1 /* dark-Icon-60x60@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "dark-Icon-60x60@2x.png"; path = "todoistClone/DynamicAppIcons/dark-Icon-60x60@2x.png"; sourceTree = "<group>"; };
+		438FF4CD6C1D49ABB778F214 /* blue-Icon-60x60@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "blue-Icon-60x60@3x.png"; path = "todoistClone/DynamicAppIcons/blue-Icon-60x60@3x.png"; sourceTree = "<group>"; };
+		5724DB682BE1463E93444E55 /* blue-Icon-60x60@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "blue-Icon-60x60@2x.png"; path = "todoistClone/DynamicAppIcons/blue-Icon-60x60@2x.png"; sourceTree = "<group>"; };
+		69D4B248D0CF43C4B6EDDDEC /* dark-Icon-60x60@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "dark-Icon-60x60@3x.png"; path = "todoistClone/DynamicAppIcons/dark-Icon-60x60@3x.png"; sourceTree = "<group>"; };
 		6C2E3173556A471DD304B334 /* Pods-todoistClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todoistClone.debug.xcconfig"; path = "Target Support Files/Pods-todoistClone/Pods-todoistClone.debug.xcconfig"; sourceTree = "<group>"; };
 		7A4D352CD337FB3A3BF06240 /* Pods-todoistClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-todoistClone.release.xcconfig"; path = "Target Support Files/Pods-todoistClone/Pods-todoistClone.release.xcconfig"; sourceTree = "<group>"; };
-		A1F1A3A30D53876F291B8F5B /* Pods_todoistClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_todoistClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90EEA9A8A959407E9F9DA766 /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "todoistClone/noop-file.swift"; sourceTree = "<group>"; };
+		A07CC022571540728A6E815E /* green-Icon-60x60@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "green-Icon-60x60@2x.png"; path = "todoistClone/DynamicAppIcons/green-Icon-60x60@2x.png"; sourceTree = "<group>"; };
+		A17856A2F1241F513A08464D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = todoistClone/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		A1FFCEB971A54FDBA6536C13 /* default-Icon-60x60@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "default-Icon-60x60@3x.png"; path = "todoistClone/DynamicAppIcons/default-Icon-60x60@3x.png"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = todoistClone/SplashScreen.storyboard; sourceTree = "<group>"; };
+		B1D9DA13487848D89C079FAF /* green-Icon-60x60@3x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "green-Icon-60x60@3x.png"; path = "todoistClone/DynamicAppIcons/green-Icon-60x60@3x.png"; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
+		DF37A9406DED4F0380F846DF /* todoistClone-Bridging-Header.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "todoistClone-Bridging-Header.h"; path = "todoistClone/todoistClone-Bridging-Header.h"; sourceTree = "<group>"; };
+		E908ABEC5FC6479EBCC5C5B5 /* default-Icon-60x60@2x.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "default-Icon-60x60@2x.png"; path = "todoistClone/DynamicAppIcons/default-Icon-60x60@2x.png"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EEDE2BFEE2E009A96D0625CD /* Pods_todoistClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_todoistClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-todoistClone/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD2CD956C3EB333D0B95BCAF /* Pods_todoistClone.framework in Frameworks */,
+				A86572A4D78CAEAD9829CEDD /* Pods_todoistClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,9 +75,10 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				423A70C60B3B4D4B86C52D6F /* noop-file.swift */,
-				2EF8D3514CC84480A294699F /* todoistClone-Bridging-Header.h */,
-				077353DB22CED6D120D3B74B /* PrivacyInfo.xcprivacy */,
+				90EEA9A8A959407E9F9DA766 /* noop-file.swift */,
+				DF37A9406DED4F0380F846DF /* todoistClone-Bridging-Header.h */,
+				716DD6398E20488EB4D69648 /* DynamicAppIcons */,
+				A17856A2F1241F513A08464D /* PrivacyInfo.xcprivacy */,
 			);
 			name = todoistClone;
 			sourceTree = "<group>";
@@ -70,9 +87,25 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				A1F1A3A30D53876F291B8F5B /* Pods_todoistClone.framework */,
+				EEDE2BFEE2E009A96D0625CD /* Pods_todoistClone.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		716DD6398E20488EB4D69648 /* DynamicAppIcons */ = {
+			isa = PBXGroup;
+			children = (
+				E908ABEC5FC6479EBCC5C5B5 /* default-Icon-60x60@2x.png */,
+				A1FFCEB971A54FDBA6536C13 /* default-Icon-60x60@3x.png */,
+				40EDB5DB242640019E39FDC1 /* dark-Icon-60x60@2x.png */,
+				69D4B248D0CF43C4B6EDDDEC /* dark-Icon-60x60@3x.png */,
+				A07CC022571540728A6E815E /* green-Icon-60x60@2x.png */,
+				B1D9DA13487848D89C079FAF /* green-Icon-60x60@3x.png */,
+				5724DB682BE1463E93444E55 /* blue-Icon-60x60@2x.png */,
+				438FF4CD6C1D49ABB778F214 /* blue-Icon-60x60@3x.png */,
+			);
+			name = DynamicAppIcons;
+			path = "";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -147,14 +180,14 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "todoistClone" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				7F25111B0F8F276972CBFE4F /* [Expo] Configure project */,
+				41FD95878CA75B3AA5938F9F /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				A76D12727CB4492180B51149 /* Upload Debug Symbols to Sentry */,
-				74FC53DEF71B95DFE0490034 /* [CP] Embed Pods Frameworks */,
+				068A0BF1C9A148BEA7C8E85E /* Upload Debug Symbols to Sentry */,
+				1928515028ACFDC24CF9D510 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,7 +237,15 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				F28F9EFEA8CD7D144A812F67 /* PrivacyInfo.xcprivacy in Resources */,
+				8878F44388E04269BFADEA66 /* default-Icon-60x60@2x.png in Resources */,
+				92B9E68267C647BE8EF4ABD3 /* default-Icon-60x60@3x.png in Resources */,
+				87DC147F557947B6BFF8204E /* dark-Icon-60x60@2x.png in Resources */,
+				62E1DA416A8E41698561DE6F /* dark-Icon-60x60@3x.png in Resources */,
+				1A533827F29A4AB196B882B4 /* green-Icon-60x60@2x.png in Resources */,
+				B533DAF3F49F447F9D593667 /* green-Icon-60x60@3x.png in Resources */,
+				9BDB962A6B8743659B911BF1 /* blue-Icon-60x60@2x.png in Resources */,
+				CDAFF56ACF414B3E85BB32B0 /* blue-Icon-60x60@3x.png in Resources */,
+				A23E7DEBD878365BA2CD7C27 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +266,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [[ -f \"$PODS_ROOT/../.xcode.env\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env\"\nfi\nif [[ -f \"$PODS_ROOT/../.xcode.env.local\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.local\"\nfi\n\n# The project root by default is one level up from the ios directory\nexport PROJECT_ROOT=\"$PROJECT_DIR\"/..\n\nif [[ \"$CONFIGURATION\" = *Debug* ]]; then\n  export SKIP_BUNDLING=1\nfi\nif [[ -z \"$ENTRY_FILE\" ]]; then\n  # Set the entry JS file using the bundler's entry resolution.\n  export ENTRY_FILE=\"$(\"$NODE_BINARY\" -e \"require('expo/scripts/resolveAppEntry')\" \"$PROJECT_ROOT\" ios absolute | tail -n 1)\"\nfi\n\nif [[ -z \"$CLI_PATH\" ]]; then\n  # Use Expo CLI\n  export CLI_PATH=\"$(\"$NODE_BINARY\" --print \"require.resolve('@expo/cli', { paths: [require.resolve('expo/package.json')] })\")\"\nfi\nif [[ -z \"$BUNDLE_COMMAND\" ]]; then\n  # Default Expo CLI command for bundling\n  export BUNDLE_COMMAND=\"export:embed\"\nfi\n\n# Source .xcode.env.updates if it exists to allow\n# SKIP_BUNDLING to be unset if needed\nif [[ -f \"$PODS_ROOT/../.xcode.env.updates\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.updates\"\nfi\n# Source local changes to allow overrides\n# if needed\nif [[ -f \"$PODS_ROOT/../.xcode.env.local\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.local\"\nfi\n\n/bin/sh `\"$NODE_BINARY\" --print \"require('path').dirname(require.resolve('@sentry/react-native/package.json')) + '/scripts/sentry-xcode.sh'\"` `\"$NODE_BINARY\" --print \"require('path').dirname(require.resolve('react-native/package.json')) + '/scripts/react-native-xcode.sh'\"`\n\n";
+		};
+		068A0BF1C9A148BEA7C8E85E /* Upload Debug Symbols to Sentry */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Upload Debug Symbols to Sentry";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/bin/sh `${NODE_BINARY:-node} --print \"require('path').dirname(require.resolve('@sentry/react-native/package.json')) + '/scripts/sentry-xcode-debug-files.sh'\"`";
 		};
 		08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -248,7 +303,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		74FC53DEF71B95DFE0490034 /* [CP] Embed Pods Frameworks */ = {
+		1928515028ACFDC24CF9D510 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -268,7 +323,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-todoistClone/Pods-todoistClone-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7F25111B0F8F276972CBFE4F /* [Expo] Configure project */ = {
+		41FD95878CA75B3AA5938F9F /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -337,20 +392,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-todoistClone/Pods-todoistClone-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A76D12727CB4492180B51149 /* Upload Debug Symbols to Sentry */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Upload Debug Symbols to Sentry";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/bin/sh `${NODE_BINARY:-node} --print \"require('path').dirname(require.resolve('@sentry/react-native/package.json')) + '/scripts/sentry-xcode-debug-files.sh'\"`";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -361,7 +402,7 @@
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */,
-				532188794B384A8B9AAC0E24 /* noop-file.swift in Sources */,
+				AA2F37566D5449B8803ED577 /* noop-file.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
